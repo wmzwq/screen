@@ -1,0 +1,28 @@
+<!--
+  Generated template for the UrlPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-content padding>
+    <div class="header-title">
+        <div class="back" (click)="back()"><img src="assets/imgs/back.svg" alt=""></div>></div>
+    <ion-item class="optionClass">
+        <ion-label>类型选择</ion-label>
+        <ion-select [(ngModel)]="notifications" interface="action-sheet" (ngModelChange)="segmentChanged()" style="color:#FFFF">
+          <ion-option value="自定义">自定义</ion-option>
+          <ion-option value="云">云</ion-option>
+         
+        </ion-select>
+      </ion-item>
+ <div  class="check" style="margin-top: 100px;"> <label style="color:white;font-size: 20px;">接口访问地址：</label><input type="text" id="start" [(ngModel)]="start"  class="time-input"  /> <label style="color:white;font-size: 20px;margin-left: 50px;" id="mark1"></label></div>
+ <div  class="check"  style="margin-top: 50px;"> <label style="color:white;font-size: 20px;">通信访问地址：</label><input type="text" id="end" [(ngModel)]="end"  class="time-input" /><label style="color:white;font-size: 20px; margin-left: 50px;" id="mark2"></label></div>
+  <button ion-button class="determine" (click)="determine()">
+  测试
+  </button>
+  <button ion-button (click)="save()" style="float: right;margin-top: -46px;margin-right:  624px;">
+   保存
+    </button>
+</ion-content>

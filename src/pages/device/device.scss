@@ -1,0 +1,198 @@
+page-device {
+    body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+    dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+    pre, /* text formatting elements 文本格式元素 */
+    fieldset, button, input, textarea, /* form elements 表单元素 */
+    th, td,
+    div, p, span{ /* table elements 表格元素 */
+        margin: 0;
+        padding: 0;
+    }
+     ion-content{
+        width: 100%;
+        height: 100%;
+        background: #2D3447;
+        display: flex ;
+    }
+    .data-container{
+        width: 1360px;
+        height: 700px;
+        border-radius: 16px;
+        background-color: #3A4568;
+        margin: auto;
+        position: relative;
+        display: flex;
+        z-index: 99;
+    }
+    .close{
+        position: absolute;
+        right: -30px;
+        top: -30px;
+        width: 80px;
+        height: 80px;
+        border-radius: 42px;
+        background-color: #465685;
+        display: flex;
+        box-shadow: 0 3px 20px rgba(0, 0, 0, 0.16);
+    }
+    .close span{
+        background: url("../../assets/imgs/close.svg") no-repeat;
+        background-size: 100%;
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        margin:auto;
+    }
+    .data-content{
+        width: 920px;
+        margin: auto;
+    }
+    .data-content li{
+        width: 265px;
+        height: 105px;
+        background: linear-gradient(178.41deg, #4D597F -11%, #3B4668 123%, #374162 151%);
+        box-shadow: 0 3px 32px #2F3756;
+        border-radius: 16px;
+        float: left;
+        list-style: none;
+        margin: 20px 20px;
+        color: white;
+        position: relative;
+    }
+    .data-content li p{
+        margin-left: 24px;
+    }
+    .data-content li p:nth-child(1){
+        font-size: 26px;
+        margin-top: 22px;
+        margin-bottom: 2px;
+    }
+    .data-content li img{
+        position: absolute;
+        right: 16px;
+        top: 40px;
+        height: 32px;
+    }
+    ion-content{
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, #394465 0%, #242A43 100%) no-repeat;
+    }
+    .header-title{
+        width: 1580px;
+        margin: auto;
+        padding: 24px 0;
+        display: flex;
+    }
+    .back{
+        width: 65px;
+        height: 65px;
+        background-color: #4D597F;
+        box-shadow: 0 3px 32px #2F3756;
+        border-radius: 35px;
+        display: flex;
+    }
+    .back img{
+        width:35px;
+        height: 35px;
+        margin: auto 12px;
+    }
+    .header-title p{
+        font-size: 24px;
+        color: #EBEBEB;
+        margin: auto 24px;
+    }
+    .device-list{
+        width: 1620px;
+        margin: auto;
+    }
+    .device{
+        width: 500px;
+        height: 205px;
+        border-radius: 16px;
+        margin: 20px;
+        background: linear-gradient(178.39deg, #4D597F -11%, #3B4668 100%, #374162 152%);
+        box-shadow: 0 3px 32px #2F3756;
+        float: left;
+        position: relative;
+    }
+    .device p:nth-child(1){
+        color: rgba(204, 204, 204, 0.8);
+        font-weight: bold;
+        margin: 20px 0 0 64px;
+    }
+    .device p:nth-child(2){
+        font-size: 18px;
+        font-weight: bold;
+        color: #EBEBEB;
+        margin: 10px 0 0 64px;
+    }
+    .dot{
+        display: flex;
+        color: #ccc;
+        margin: 18px 0 0 64px;
+        font-size: 14px;
+    }
+    .dot img{
+        margin-right:8px;
+    }
+    .dot img:nth-child(2){
+        margin-left: 24px;
+    }
+    .device ul{
+        width: 468px;
+        margin: auto;
+    }
+    .device li{
+        list-style: none;
+        float: left;
+        border: 1px solid #698BDC;
+        color:#8892AB;
+        font-size: 15px;
+        width: 83px;
+        line-height: 42px;
+        border-radius: 26px;
+        text-align: center;
+        font-weight: 700;
+        margin: 30px 5px;
+    }
+    .img1{
+        left: 16px;
+        top: 42px;
+        width: 150px;
+        height: 116px;
+        opacity: .02;
+        position: absolute;
+    }
+    .img2{
+        right: 24px;
+        top: 18px;
+        width: 70px;
+        position: absolute;
+    }
+    .uncheck{
+        background-color: #698BDC;
+        color: white;
+    }
+    .checked{
+        background-color: #698BDC;
+        color: white;
+    }
+    .week-picker{
+        width: 395px;
+        height: 180px;
+        margin: auto;
+    }
+    .week-picker li{
+        width: 160px;
+        text-align: center;
+        line-height: 70px;
+        border-radius: 8px;
+        list-style: none;
+        font-size: 18px;
+        font-weight: 600;
+        height: 70px;
+        float: left;
+    }
+
+}

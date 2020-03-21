@@ -1,0 +1,7 @@
+{
+  "name": "screen",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

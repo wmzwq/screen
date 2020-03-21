@@ -1,0 +1,60 @@
+page-login {
+    //背景图形
+  
+  
+  ion-content{
+    background-color: #2D3447 !important;
+  }
+  
+    //logo
+    .logo {
+      width: 11rem;
+      height: 12rem;
+      background: url(../../assets/imgs/logo.png) no-repeat;
+      background-size: 100%;
+      margin: 5% auto;
+    }
+  
+    //input
+    .input-box{
+      margin: 1.6rem 1rem 0;
+    }
+    .input-box ion-item{
+      box-shadow: 0px 4px 16px rgba(69, 91, 99, 0.078);
+      border-radius: 1rem;
+      font-size: 1.4rem;
+    
+    }
+  
+    .item-ios.item-block .item-inner,
+    .item-md.item-block .item-inner{
+      border:none;
+    }
+    .text-input-md{
+      font-size: 23px;
+    text-align: center;
+    }
+    //button
+    .button-ios,
+    .button-md{
+      background-color: #2699FB;
+      border-radius: 0.8rem;
+      height: 3.2em;
+      margin-top: 4rem;
+      box-shadow: none;
+      margin-left: 800px;
+      width: 13%;
+    }
+  
+    .item > ion-icon, .item-inner > ion-icon{
+      min-height: 1.8rem;
+    }
+  
+    //复写样式
+    .item-md.item-input.item-input-has-focus .item-inner,
+    .item-md.item-input.input-has-focus .item-inner{
+      border-bottom: none !important;
+      box-shadow: none;
+    }
+  }
+  

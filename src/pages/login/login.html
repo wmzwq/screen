@@ -1,0 +1,21 @@
+
+<ion-content padding>
+  <div class="logo"></div>
+  <div class="input-box">
+    <ion-item>
+      <ion-input type="text" placeholder="请输入账号" [(ngModel)]="username"></ion-input>
+      <ion-icon ios="ios-person" md="md-person" item-end [ngStyle]="iconStyle"></ion-icon>
+    </ion-item>
+  </div>
+  <div class="input-box">
+    <ion-item >
+      <ion-input [type]="isShow ? 'text':'password'" placeholder="请输入密码"[(ngModel)]="password" ></ion-input>
+      <ion-icon ios="ios-key" md="md-key" item-end [ngStyle]="iconStyle"></ion-icon>
+    </ion-item>
+  </div>
+
+    <button ion-button  (click)="logIn()">
+      登录
+    </button>
+  
+</ion-content>

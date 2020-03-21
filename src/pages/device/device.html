@@ -1,0 +1,24 @@
+<ion-content>
+  <div class="header-title">
+    <div class="back" (click)="back()"><img src="assets/imgs/back.svg" alt=""></div>
+    <p>设备列表</p>
+  </div>
+  <div class="device-list">
+    <div class="device" *ngFor="let item of deviceList">
+      <p>设备名称</p>
+      <p>{{item.F_FullName}}</p>
+      <div class="dot" *ngIf="item.HardwareStatus=='正常'" > <img  src="assets/imgs/dot-blue.svg"> 在线状态正常</div> 
+      <div class="dot" *ngIf="item.HardwareStatus=='故障'"><img  src="assets/imgs/dot-red.svg">设备报警中</div>
+      <div class="dot" *ngIf="item.HardwareStatus=='离线'" ><img src="assets/imgs/dot-red.svg">设备离线中</div> 
+      <ul>     
+        <li  (click)="real(item)">实时数据</li>
+        <li (click)="historical(item)">基础数据</li>
+        <li (click)="gotime(item)">配置</li>
+        <li (click)="kai(item)">合闸</li>
+        <li (click)="guan(item)">分闸</li>    
+      </ul>
+      <img class="img1" src="assets/imgs/equip.svg">
+      <img  class="img2" src="assets/imgs/repeat.svg">
+    </div>
+  </div>
+</ion-content>

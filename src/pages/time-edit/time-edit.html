@@ -1,0 +1,38 @@
+<ion-content>
+  <div class="back" (click)="back()"><img src="assets/imgs/back.svg" alt=""></div>
+  
+  <div class="bg-container" >
+    <div class="timer-bar">
+      <div class="time-picker">
+        <div style="display: flex">
+          <div class="time-input">
+            <input type="time" [(ngModel)]="start">
+            <p>开机时间</p>
+          </div>
+          <span class="line"></span>
+          <div class="time-input">
+            <input type="time" [(ngModel)]="end" >
+            <p>关机时间</p>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" [(ngModel)]="check"/>
+            <label></label>
+          </div>
+        </div>
+        <ul class="week-picker" >
+          <li class="uncheck" (click)="one()" id="one">星期一</li>
+          <li class="uncheck" (click)="two()" id="two">星期二</li>
+          <li class="uncheck" (click)="three()" id="three">星期三</li>
+          <li class="uncheck" (click)="four()" id="four">星期四</li>
+          <li class="uncheck" (click)="five()" id="five">星期五</li>
+          <li class="uncheck" (click)="six()" id="six">星期六</li>
+          <li class="uncheck" (click)="seven()" id="seven">星期天</li>
+        </ul>
+      </div>
+      <div class="operate" (click)="delete()"> 
+        <img src="assets/imgs/delete.svg">
+      </div>
+    </div>  
+    <div class="addition" (click)="edit()" >修改时间</div>  
+  </div>
+</ion-content>

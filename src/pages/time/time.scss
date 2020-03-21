@@ -1,0 +1,226 @@
+page-time {
+    
+    body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+    dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+    pre, /* text formatting elements 文本格式元素 */
+    fieldset, button, input, textarea, /* form elements 表单元素 */
+    th, td,
+    div, p, span{ /* table elements 表格元素 */
+        margin: 0;
+        padding: 0;
+    }
+    ion-content{
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, #394465 0%, #242A43 100%) no-repeat;
+        background-size: cover;
+    }
+    .back{
+        position: absolute;
+        left: 24px;
+        top: 24px;
+        width: 65px;
+        height: 65px;
+        background-color: #4D597F;
+        box-shadow: 0 3px 32px #2F3756;
+        border-radius: 35px;
+        display: flex;
+    }
+    .back img{
+        width:35px;
+        height: 35px;
+        margin: auto 12px;
+    }
+    .bg-container{
+        margin: auto;
+    }
+    .timer-bar{
+        width: 1180px;
+        height: 240px;
+        background: linear-gradient(179.21deg, #4D597F -11%, #3B4668 100%, #374162 151%);
+        border-radius: 16px;
+        box-shadow: 0 3px 32px #2F3756;
+        display: flex;
+        margin:32px auto;
+    }
+    .time-picker{
+        width: 90%;
+        height: 102px;
+        margin: 32px 64px;
+        border-bottom: 2px solid #5A658D;
+    }
+    .time-input{
+        margin: 10px 8px;
+    }
+    .time-input p{
+        text-align: center;
+        margin-top: 8px;
+        color: #ccc;
+        font-size: 16px;
+    }
+    .time-input input{
+        width: 200px;
+        height: 42px;
+        border-radius: 4px;
+        border: none;
+        background-color: #364266;
+        color: white;
+        font-size: 18px;
+        text-align: center;
+    }
+    .line{
+        width: 80px;
+        height: 3px;
+        border-radius: 4px;
+        background: linear-gradient(90deg, #718EC9 0%, #5CACCC 100%);
+        margin: 30px 40px 0 40px;
+    }
+    .operate{
+        width: 10%;
+        height: 100%;
+        background-color: #394365;
+        border-bottom-right-radius: 8px;
+        border-top-right-radius: 8px;
+        display: flex;
+    }
+    .operate img{
+        width: 40px;
+        margin: auto;
+    }
+    .week-picker{
+        width: 100%;
+        margin-top: 40px;
+        display: flex;
+    }
+    .week-picker li{
+        width: 115px;
+        margin: auto;
+        text-align: center;
+        line-height: 45px;
+        border-radius: 24px;
+        list-style: none;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .uncheck{
+        border: 1px solid #698BDC;
+        color: #8892AB;
+    }
+    .checked{
+        background-color: #698BDC;
+        color: white;
+    }
+    .additional{
+        width: 100px;
+        line-height: 34px;
+        text-align: center;
+        border-radius:24px;
+        background-color: #fff;
+        box-shadow:0 3px 16px rgba(193, 193, 193, 0.3);
+        margin: 10px auto;
+    }
+    .additional,.checkbox input,.week-picker li,.operate:hover{
+        cursor: pointer;
+    }
+    /*开关样式*/
+    .checkbox {
+        position: relative;
+        display: inline-block;
+        margin: 10px 0 0 230px;
+    }
+    .checkbox label {
+        width: 80px;
+        height: 30px;
+        background: #ccc;
+        position: relative;
+        display: inline-block;
+        border-radius: 46px;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+    }
+    .checkbox label:after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        left: 0;
+        top: -5px;
+        z-index: 2;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+    }
+    .checkbox input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        opacity: 0;
+    }
+    .checkbox:after {
+        content: '已停止';
+        font-size: 16px;
+        position: absolute;
+        color: #8892AB;
+        top: 10px;
+        right: 11px;
+    }
+    .checkbox label {
+        background: #242F46;
+        width: 102px;
+        height: 42px;
+        border-radius: 20px;
+    }
+    .checkbox label:after {
+        content: '已开启';
+        color: #DADADB;
+        text-align: center;
+        line-height: 28px;
+        text-indent: 100px;
+        background: #829EB9;
+        overflow: hidden;
+        box-shadow: none;
+        border-radius: 32px;
+        -ms-transform: translateX(-50px);
+        -webkit-transform: translateX(-50px);
+        transform: translateX(-50px);
+        -moz-transition: all 0.4s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        -o-transition: all 0.4s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        // -webkit-transition-delay: 0.2s, 0s, 0s;
+        -webkit-transition: all 0.4s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        transition: all 0.4s 0.2s, width 0.2s linear, text-indent 0.4s linear;
+        top: 5px;
+        left: auto;
+        right: 14px;
+        width: 32px;
+        height: 32px;
+    }
+    .checkbox input:checked + label:after {
+        background: #207FD8;
+        left: auto;
+        right: 10px;
+        -ms-transform: translateX(0px);
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+        -moz-transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;
+        -o-transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;
+        // -webkit-transition-delay: 0s, 0.4s, 0.4s;
+        -webkit-transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;
+        transition: all 0.4s, width 0.2s linear 0.4s, text-indent 0.3s linear 0.4s;
+        width: 82px;
+        text-indent: 0;
+    }
+    .addition{
+        width: 155px;
+        line-height: 46px;
+        text-align: center;
+        border-radius:24px;
+        background-color: #4D597F;
+        box-shadow:0 3px 32px #2F3756;
+        margin: 50px auto 0;
+        font-size: 18px;
+        color: #DFDFDF;
+    }
+}

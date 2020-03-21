@@ -1,0 +1,38 @@
+<ion-content>
+    <div class="back" (click)="back()"><img src="assets/imgs/back.svg" alt=""></div>
+    <div class="new" (click)="new()"><img src="assets/imgs/new.svg" alt=""></div>
+    <div class="bg-container" *ngFor="let item of arr"  >
+      <div class="timer-bar">
+        <div class="time-picker" (click)="edit(item)">
+          <div style="display: flex" >
+            <div class="time-input" > 
+              <input type="time" id="start"  value={{item.F_StartTime}}>
+              <p>开机时间</p>
+            </div>
+            <span class="line"></span>
+            <div class="time-input">
+              <input type="time" id=end value={{item.F_EndTime}}>
+              <p>关机时间</p>
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" *ngIf="item.F_EnabledMark==1" checked="checked"/>
+              <input type="checkbox" *ngIf="item.F_EnabledMark==0" />
+              <label></label>
+            </div>
+          </div>
+          <ul class="week-picker" >
+     
+            <li class="checked" *ngIf="item.F_Monday==true">星期一</li>
+            <li class="checked" *ngIf="item.F_Tuesday==true">星期二</li>       
+            <li class="checked" *ngIf="item.F_Wednesday==true">星期三</li>          
+            <li class="checked" *ngIf="item.F_Thursday==true">星期四</li>
+            <li class="checked" *ngIf="item.F_Friday==true">星期五</li>
+            <li class="checked" *ngIf="item.F_Saturday==true">星期六</li>
+            <li class="checked" *ngIf="item.F_Sunday==true">星期天</li>
+          </ul>
+        </div>
+   
+       
+      </div>    
+    </div>
+  </ion-content>

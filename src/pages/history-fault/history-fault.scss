@@ -1,0 +1,50 @@
+page-history-fault {
+    body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+    dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+    pre, /* text formatting elements 文本格式元素 */
+    fieldset, button, input, textarea, /* form elements 表单元素 */
+    th, td,
+    div, p, span{ /* table elements 表格元素 */
+        margin: 0;
+        padding: 0;
+    }
+     ion-content{
+        width: 100%;
+        height: 100%;
+        background: #2D3447 !important;
+        display: flex ;
+    }
+    .header-title{
+        width: 1580px;
+        margin: auto;
+        padding: 24px 0;
+        display: flex;
+    }
+    .back{
+        width: 65px;
+        height: 65px;
+        background-color: #4D597F;
+        box-shadow: 0 3px 32px #2F3756;
+        border-radius: 35px;
+        display: flex;
+    }
+    .back img{
+        width:35px;
+        height: 35px;
+        margin: auto 12px;
+    }
+    .header-title p{
+        font-size: 24px;
+        color: #EBEBEB;
+        margin: auto 24px;
+    }
+    .time-input{
+        height: 52px;
+        border: 2px solid #5A658D;
+        border-radius: 4px;
+        background: #5A658D;
+        text-align: center;
+        font-size: 23px;
+        color: white;
+    }
+}

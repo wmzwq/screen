@@ -1,0 +1,137 @@
+<ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)"> 
+        <ion-refresher-content
+            pullingIcon="arrow-dropdown"
+            pullingText="下拉刷新"
+            refreshingSpinner="circles"
+            refreshingText="刷新..."> 
+        </ion-refresher-content>
+        <ion-refresher-content > 
+    </ion-refresher-content>
+    </ion-refresher>
+  <div class="bar-header">
+    <div class="title">
+      <img src="../../assets/imgs/logo.png">
+      <p>{{name}}</p>
+      <p>智慧能效与电气安全物联系统</p>
+    </div>
+    <div class="mal-num" style="margin-left: 3px;" id="showZone">
+      <p>{{EquipmentFault}}</p>
+      <div class="dot">
+        <img src="../../assets/imgs/dot-red.svg">当前故障记录
+      </div>
+    
+    </div>
+    <div class="prompt" id="prompt" (click)="prompt()">
+     
+    </div> 
+    <div class="tooltips" id="tooltips" (click)="prompt()">
+     
+      </div> 
+    <div class="sz" (click)="goSet()">
+      </div> 
+  </div>
+  <div class="bar-content">
+    <div class="alarm">
+      <div class="bar-title" style="background-color:#4E5980;" (click)="gohistory()">
+        <div>
+          <p>当前报警</p>
+          The current alarm
+          <div style="position: absolute;right:0;top:15px">
+            <span style="font-size: 18px">更多</span>
+            <ion-icon name="arrow-forward" style="float:right;font-size: 3rem;margin: -2px 10px 0 "
+             ></ion-icon>
+          </div>
+        </div>
+        <div id="default" style="display:none;text-align: center;">
+          <img src="assets/imgs/no.png" class="no">
+          <p style="color:#5C6784;font-size: 18px ">当前状态良好，暂无报警</p>
+        </div>
+        <ion-grid id="faultTitle"> 
+          <ion-row text-center>
+            <ion-col col-2 style="margin-left: 16px">配电室</ion-col>
+            <ion-col col-2>设备名称</ion-col>
+            <ion-col col-2>设备编号</ion-col>
+            <ion-col col-2>报警内容</ion-col>
+            <ion-col col-2>报警时间</ion-col>
+            <ion-col col-1>故障状态</ion-col>
+          </ion-row>
+         
+          <ion-row text-center class="content-bg" *ngFor="let item of faultList" (click)="gohistory()" >
+            <img *ngIf="item.Treturntime==null" src="../../assets/imgs/dot-alarm.svg">
+            <img *ngIf="item.Treturntime!=null" src="../../assets/imgs/dot-normal.svg">
+            <ion-col col-2>{{item.RoomName}}</ion-col>
+            <ion-col col-2>{{item.EquipmentName}}</ion-col>
+            <ion-col col-2>{{item.DataId}}</ion-col>
+            <ion-col col-2>{{item.Talarminformation}}</ion-col>
+            <ion-col col-2 *ngIf="item.Treturntime!=null">{{item.Treturntime}}</ion-col>
+            <ion-col col-2 *ngIf="item.Treturntime==null">{{item.Tactivetime}}</ion-col>
+            <ion-col col-1 *ngIf="item.Treturntime!=null">已恢复</ion-col>
+            <ion-col col-1 *ngIf="item.Treturntime==null" style="color:#FF4760">故障中</ion-col>
+          </ion-row>
+
+        </ion-grid>
+
+      </div>
+
+    </div>
+    <div class="safety">
+      <div class="num">
+        <p>{{protectDay}}</p>
+        <p>天</p>
+      </div>
+      <div class="dot">
+        <img src="../../assets/imgs/dot-blue.svg">持续为您守护中
+      </div>
+    </div>
+  </div>
+  <div class="bar-footer">
+    <div class="device" (click)="godecic()">
+      <img src="../../assets/imgs/device.svg">
+      <div class="bar-bottom">
+        <p>设备</p>
+        <img src="../../assets/imgs/repeat.svg" alt="">
+      </div>
+    </div>
+    <div class="charts">
+      <div class="bar-title" style="background-color: #3A4468;">
+        <p>今日用电监测</p>
+        Electricity consumption statitics every seven days
+        <ion-list style="clear: both;position: absolute; right: 0; top: 0;width: 500px;">
+         
+          <ion-item style="width:50%;float: right;background-color: #3A4468;" >
+            <ion-label>设备</ion-label>
+            <ion-select [(ngModel)]="equip" interface="action-sheet" (ngModelChange)="equipChanged()" style="color:#FFFF" >
+                <ion-option value="{{list.DataId}}" *ngFor="let list of EquipmentList" >{{list.F_FullName}}</ion-option>
+
+            </ion-select>
+          </ion-item>
+          <ion-item style="width:50%;float: right;background-color: #3A4468;">
+              <ion-label>配电室</ion-label>
+              <ion-select [(ngModel)]="notifications" interface="action-sheet" (ngModelChange)="segmentChanged()" style="color:#FFFF">
+                <ion-option value="{{item.F_Id}}" *ngFor="let item of transformerRoom" id="RoomName">{{item.RoomName}}</ion-option>
+  
+              </ion-select>
+            </ion-item>
+        </ion-list>
+        <div id="chart" style="width: 100%;height:280px;margin-top: 30px"></div>
+      </div>
+
+    </div>
+  </div>
+  <div style="height:4000px;"></div>
+
+    <div class="livechat-girl animated"  (click)="gohistory()">
+        <img class="girl" src="assets/imgs/gzts.png">
+        <div class="livechat-hint rd-notice-tooltip rd-notice-type-success rd-notice-position-left single-line show_hint">
+            <div class="rd-notice-content"  (ngShow)="showtimes">您有故障未处理，请及时处理！</div>
+        </div>
+        <div class="animated-circles" id="animated" style="display: block;">
+            <div class="circle c-1"></div>
+            <div class="circle c-2"></div>
+            <div class="circle c-3"></div>
+        </div>
+       
+    </div>
+
+</ion-content>

@@ -1,0 +1,33 @@
+<!--
+  Generated template for the HistoricalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-content >
+    <div class="header-title">
+        <div class="back" (click)="back()"><img src="assets/imgs/back.svg" alt=""></div>
+        <p>设备基础数据曲线</p>
+      </div>
+  <div class="dot">
+     
+    <label style="color:white;font-size: 20px;">开始日期选择：</label><input id="SDate" type="date"  [(ngModel)]="start" (ngModelChange)="startChanged()" class="time-input"/>
+    <label style="color:white;margin-left: 63px;font-size: 20px;">结束日期选择：</label><input id="EDate" type="date" [(ngModel)]="end" (ngModelChange)="endChanged()" class="time-input"/>
+  <ion-item class="optionClass">
+    <ion-label>类型选择</ion-label>
+    <ion-select [(ngModel)]="notifications" interface="action-sheet" (ngModelChange)="segmentChanged()" style="color:#FFFF">
+      <ion-option value="电流">电流</ion-option>
+      <ion-option value="温度">温度</ion-option>
+      <ion-option value="剩余电流">剩余电流</ion-option>
+      <ion-option value="线电压">线电压</ion-option>
+      <ion-option value="相电压">相电压</ion-option>
+      <ion-option value="功率因素">功率因素</ion-option>
+      <ion-option value="频率">频率</ion-option>
+      <ion-option value="有功功率">有功功率</ion-option>  
+    </ion-select>
+  </ion-item>
+</div>
+  <div id="chart" style="width: 100%;height:500px;margin-top: 120px"></div>
+</ion-content>

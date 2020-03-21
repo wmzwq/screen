@@ -1,0 +1,72 @@
+page-historical {
+    body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+    dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+    pre, /* text formatting elements 文本格式元素 */
+    fieldset, button, input, textarea, /* form elements 表单元素 */
+    th, td,
+    div, p, span{ /* table elements 表格元素 */
+        margin: 0;
+        padding: 0;
+    }
+     ion-content{
+        width: 100%;
+        height: 100%;
+        background: #2D3447 !important;
+        display: flex ;
+    }
+    .item-md.item-block .item-inner {
+        border-bottom: none;
+        
+    }
+    .back{
+        position: absolute;
+        left: 24px;
+        top: 24px;
+        width: 65px;
+        height: 65px;
+        background-color: #4D597F;
+        box-shadow: 0 3px 32px #2F3756;
+        border-radius: 35px;
+        display: flex;
+    }
+    .back img{
+        width:35px;
+        height: 35px;
+        margin: auto 12px;
+    }
+    .dot{
+        margin-left: 231px;
+        margin-top: 43px;
+        text-align: center;
+    }
+    .time-input{
+        height: 52px;
+        border: 2px solid #5A658D;
+        border-radius: 4px;
+        background: #5A658D;
+        text-align: center;
+        font-size: 23px;
+        color: white;
+    }
+    .optionClass{
+        width:16%;
+        float: right;
+        background-color: #3A4468;
+        margin-right: 420px;
+    }
+    .item-input .label-md, .item-select .label-md, .item-datetime .label-md{
+        color:white
+    }
+    .header-title{
+        width: 1580px;
+        margin: auto;
+        padding: 24px 0;
+        display: flex;
+    }
+    .header-title p{
+        font-size: 24px;
+        color: #EBEBEB;
+        margin-top: 15px;
+        margin-left: -42px;
+    }
+}
